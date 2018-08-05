@@ -1,6 +1,17 @@
 <html>
     <head>
         <title>Converter for colors and sizes</title>
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+        <style>
+            .typed-color {
+                display: block;
+                width: 50px;
+                height: 50px;
+                margin: 20px 0;
+                background: transparent;
+            }
+        </style>
     </head>
     <body>
         <div class="converter--color">
@@ -10,7 +21,7 @@
 
             <div class="converter--color-item">
                 <label for="colorHex">Type in HEX color</label>
-                <input id="colorHex" type="text" placeholder="#ff00ff">
+                <input id="colorHex" type="text" placeholder="#ff00ff" onkeyup="colorOnKeyPress(event);">
             </div>
 
             <div class="converter--color-item">
@@ -22,6 +33,8 @@
 
             <button class="converter--button-color" onclick="convertColors();">Convert colors</button>
             <button class="converter--button-clean" onclick="cleanColors();">Clean colors</button>
+
+            <div id="typed-color-output" class="typed-color"></div>
 
             <div class="conterter--color-outputs">
                 <br/><br/>
@@ -38,6 +51,8 @@
     </body>
 
     <script type="text/javascript">
+        const typedColorOutput = document.getElementById('typed-color-output');
+
         const hexField = document.getElementById('colorHex');
         const rgbField1 = document.getElementById('colorRgb1');
         const rgbField2 = document.getElementById('colorRgb2');
@@ -52,6 +67,18 @@
         let rgbColor = '';
         let cmykColor = '';
         let hsvColor = '';
+
+        // Display the input color while input. Hide if color is wrong.
+        function colorOnKeyPress(event) {
+            const $el = event.currentTarget;
+            const value = $el.value;
+
+            if (value.length >= 4 && value.length <= 7) {
+                typedColorOutput.style.backgroundColor = value;
+            } else {
+                typedColorOutput.style.backgroundColor = 'transparent';
+            }
+        }
 
         function convertColors() {
             // HEX to RGB
@@ -92,6 +119,8 @@
             hexField.value = '';
             colorRgbOutputField.innerText = '';
             colorHexOutputField.innerText = '';
+            colorCmykOutputField.innerText = '';
+            colorHsvOutputField.innerText = '';
         }
 
         // Converter HEX to RGB.
