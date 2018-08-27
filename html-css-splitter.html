@@ -3,6 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <title>HTML remove inline style</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+                crossorigin="anonymous">
+        </script>
+
+        <!-- CodeMirror Plain with css theme. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/codemirror.min.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/theme/monokai.min.css"></link>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/codemirror.min.js"></script>
+
+        <!-- CodeMirror Modes -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/mode/javascript/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/mode/htmlmixed/htmlmixed.min.js"></script>
+
+        <!-- CodeMirror Addons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/addon/selection/active-line.min.js"></script>
+
+        <!-- Custom modifications -->
         <style type="text/css">
             main {
                 display: block;
@@ -14,42 +34,45 @@
                 width: 100%;
                 margin: 20px 0;
             }
+            .CodeMirror {
+                display: block;
+                width: 100%;
+                margin: 20px 0;
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+            }
         </style>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-                crossorigin="anonymous">
-        </script>
     </head>
     <body>
         <main>
             <a href="https://html-cleaner.com/" target="_blank">https://html-cleaner.com/</a>
 
             <textarea id="input" rows="20">
-                <h2><span style="color: #4b67a1;">This is a demo</span> - <span style="color: #008000;">You can edit the text! <img src="/images/smiley.png" alt="laughing" /> ♥</span></h2>
-                <p>Type in the <strong>visual editor</strong> on the left or the <strong>source editor</strong> on the right and see them both change in real time.</p>
-                <p>Set up the cleaning preferences below and click the <strong style="box-shadow: 3px 3px 3px #aaa; border-radius: 5px; padding: 0 5px; background-color: #2b3a56; color: #fff;"> Clean HTML</strong> button to clean the HTML source code.</p>
-                <!--This is just a comment above the table...-->
-                <table class="demoTable" cellpadding="10">
-                    <tbody>
-                    <tr style="text-align: center;">
-                        <td><img src="/images/document-editors.png" alt="editors" /></td>
-                        <td><img src="/images/cleaning-arrow.png" alt="cleaning" /></td>
-                        <td><img src="/images/clean-html.png" alt="editors" width="86" height="122" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><strong>Convert almost any document to clean HTML in three simple steps:</strong>
-                            <ol>
-                                <li>Paste the content of the Document in the editor</li>
-                                <li>Click the Clean HTML (optional)</li>
-                                <li>Copy the generated HTML code</li>
-                            </ol>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <p><strong><span style="color: #366691; font-size: 20px; text-shadow: 4px 10px 4px #888;">      HTML-Cleaner.com</span></strong></p>
-                <p>Please find below all the cleaning preferences, the Find And Replace tool, the Lorem-ipsum generator, the <a href="https://html-cleaner.com/case-converter/">Case Converter</a> and much more!</p>
-                <p>Don't forget to save this link into your bookmarks and share it with your friends.</p>
+<h2><span style="color: #4b67a1;" class="demo">This is a demo</span> - <span style="color: #008000;">You can edit the text! <img src="/images/smiley.png" alt="laughing" /> ♥</span></h2>
+<p>Type in the <strong>visual editor</strong> on the left or the <strong>source editor</strong> on the right and see them both change in real time.</p>
+<p>Set up the cleaning preferences below and click the <strong style="box-shadow: 3px 3px 3px #aaa; border-radius: 5px; padding: 0 5px; background-color: #2b3a56; color: #fff;"> Clean HTML</strong> button to clean the HTML source code.</p>
+<!--This is just a comment above the table...-->
+<table class="demoTable" cellpadding="10">
+    <tbody>
+    <tr id="tr-id tr-multiple-ids" style="text-align: center;">
+        <td><img src="/images/document-editors.png" alt="editors" /></td>
+        <td><img src="/images/cleaning-arrow.png" alt="cleaning" /></td>
+        <td><img src="/images/clean-html.png" alt="editors" width="86" height="122" /></td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong id="strong-id">Convert almost any document to clean HTML in three simple steps:</strong>
+            <ol>
+                <li>Paste the content of the Document in the editor</li>
+                <li>Click the Clean HTML (optional)</li>
+                <li>Copy the generated HTML code</li>
+            </ol>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p><strong><span style="color: #366691; font-size: 20px; text-shadow: 4px 10px 4px #888;">      HTML-Cleaner.com</span></strong></p>
+<p class="p-class">Please find below all the cleaning preferences, the Find And Replace tool, the Lorem-ipsum generator, the <a href="https://html-cleaner.com/case-converter/">Case Converter</a> and much more!</p>
+<p id="p-id">Don't forget to save this link into your bookmarks and share it with your friends.</p>
             </textarea>
             <button id="convert" type="button">Convert</button>
             <textarea id="outputHtml" rows="20"></textarea>
@@ -58,46 +81,108 @@
 
         <script type="application/javascript">
             $(document).ready(function() {
+                const findTagLength = 10;
                 const $input = $('#input');
                 const $outputHtml = $('#outputHtml');
                 const $outputCss = $('#outputCss');
                 const $button = $('#convert');
                 const regexHtml = new RegExp(/(?= style=").+?(?=").(?<=style=").+?(?<=")/g); // Get the content from style=" to the next " with the space before.
                 const regexCss = new RegExp(/(?<=style=").+?(?=")/g); // Get only the content between style=" and the next ".
+                const regexCssId = new RegExp(/(?<=id=").+?(?=")/g); // Get only the content between style=" and the next ".
+                const regexCssClass = new RegExp(/(?<=class=").+?(?=")/g); // Get the content from style=" to the next " with the space before.
 
-                // TODO: Check also for ID or CLASS names not only TAGs.
+                let cmStyles = {
+                    lineNumbers: true,
+                    mode: "htmlmixed",
+                    theme: "monokai",
+                    styleActiveLine: true,
+                }
+
+                let inputCodeMirror = CodeMirror.fromTextArea($input[0], cmStyles);
+                //let outputHtmlCodeMirror = CodeMirror.fromTextArea($outputHtml[0], cmStyles);
+                //let outputCssCodeMirror = CodeMirror.fromTextArea($outputCss[0], cmStyles);
 
                 $button.on('click', (event) => {
                     let inputValue = $input.val();
+
                     if (inputValue) {
                         let cssItems = inputValue.match(regexCss);
                         let outputHtmlString = inputValue.replace(regexHtml, "");
                         let tagName = '';
                         let newCssOutput = [];
 
+                        // Write the HTML without the inline style attributes to the output textarea.
                         $outputHtml.val(outputHtmlString);
 
+                        // Check each style attribute which was found in the HTML and do some stuff.
                         for(let a = 0; cssItems.length > a; a++) {
                             let cssItem = cssItems[a];
                             let currentItemIndex = inputValue.indexOf(cssItem) - 1; // -1 is needed to get the correct start item.
+                            let tagStart = 0;
+                            let tagEnd = 0;
+                            let fullTagString = '';
+                            let cssIds = {};
+                            let cssClasses = {};
+                            let cssId = '';
+                            let cssClass = '';
+                            let cssSelector = '';
 
+                            // Find the < sign in front of the style attribute to get the tag.
                             for (let a = currentItemIndex; a >= 0; a--) {
                                 let newItemIndex = a;
+                                // Returns the char on this index position.
                                 let charAtIndex = inputValue.charAt(newItemIndex);
 
                                 if (charAtIndex === '<') {
-                                    let stringRange = inputValue.substr(newItemIndex + 1, newItemIndex + 10);
+                                    // Create a string with the length of findTagLength after the < sign.
+                                    let stringRange = inputValue.substr(newItemIndex + 1, newItemIndex + findTagLength);
+                                    // Split the string for each whitespace to a array.
                                     let splittetStringRange = stringRange.split(' ');
 
+                                    // The first item after the < sign till to the whitespace includes the tag.
                                     tagName = splittetStringRange[0];
+                                    tagStart = newItemIndex + 1;
 
+                                    // Exit the for loop.
                                     break;
                                 }
                             }
 
+                            // Find the > sign after the style attribute.
+                            for (let a = currentItemIndex; a <= inputValue.length; a++) {
+                                let newItemIndex = a;
+                                let charAtIndex = inputValue.charAt(newItemIndex);
+
+                                if (charAtIndex === '>') {
+                                    tagEnd = newItemIndex;
+
+                                    // Exit the for loop.
+                                    break;
+                                }
+                            }
+
+                            // Get the content between the tag with a style attribute.
+                            fullTagString = inputValue.substring(tagStart, tagEnd);
+
+                            // Get the string inside of the id attribute.
+                            cssIds = fullTagString.match(regexCssId);
+                            // Convert the object as string and get the string inside of the id attribute.
+                            cssId = cssIds ? cssIds.toString().split(' ') : null;
+
+                            // Get the string inside of the class attribute.
+                            cssClasses = fullTagString.match(regexCssClass);
+                            // Convert the object as string and get the string inside of the id attribute.
+                            cssClass = cssClasses ? cssClasses.toString().split(' ') : null;
+
+                            // Generate the css selector. First use class if available, then use id, else use the tag itself.
+                            cssSelector = cssClass ? '.' + cssClass[0] : (cssId ? '#' + cssId[0] : tagName);
+
                             // Create array with css attributes.
-                            newCssOutput.push(tagName + ' {' + cssItem + ' }');
+                            newCssOutput.push(cssSelector + ' {' + cssItem + ' }');
                         }
+
+                        // Sort the array for a better view.
+                        newCssOutput.sort();
 
                         // Split array to a string without comma and with a line break.
                         $outputCss.val(newCssOutput.join("\n"));
