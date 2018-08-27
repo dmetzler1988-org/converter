@@ -62,8 +62,8 @@
                 const $outputHtml = $('#outputHtml');
                 const $outputCss = $('#outputCss');
                 const $button = $('#convert');
+                const regexHtml = new RegExp(/(?= style=").+?(?=").(?<=style=").+?(?<=")/g); // Get the content from style=" to the next " with the space before.
                 const regexCss = new RegExp(/(?<=style=").+?(?=")/g); // Get only the content between style=" and the next ".
-                const regexHtml = new RegExp(/(?=style=").+?(?=").(?<=style=").+?(?<=")/g); // Get the content from style=" to the next ".
 
                 // TODO: Check also for ID or CLASS names not only TAGs.
 
