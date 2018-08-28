@@ -84,6 +84,7 @@
             // TODO: Modify code to work with regex instead of loops.
             // (class="[a-zA_Z 0-9-_]*")|(id="[a-zA_Z 0-9-_]*")|(\<[a-zA_Z] )|(style="[a-zA_Z 0-9-_]*")
             // (\<([a-zA-Z]*) )|((style|class|id)="([^"']*)")
+            // TODO: Get all IDs and Classes for a selector (like ".class-one.class-two { xy }").
             // TODO: Test it with complex code.
             // TODO: Modify documentations.
 
@@ -95,15 +96,16 @@
                 const $button = $('#convert');
                 const regexHtml = new RegExp(/(?= style=").+?(?=").(?<=style=").+?(?<=")/g); // Get the content from style=" to the next " with the space before.
                 const regexCss = new RegExp(/(?<=style=").+?(?=")/g); // Get only the content between style=" and the next ".
-                const regexCssId = new RegExp(/(?<=id=").+?(?=")/g); // Get only the content between style=" and the next ".
-                const regexCssClass = new RegExp(/(?<=class=").+?(?=")/g); // Get the content from style=" to the next " with the space before.
+                const regexCssId = new RegExp(/(?<=id=").+?(?=")/g); // Get only the content between id=" and the next ".
+                const regexCssClass = new RegExp(/(?<=class=").+?(?=")/g); // Get the content between class=" and the next ".
+                const regexFullFiltered = new RegExp(/(\<([a-zA-Z]*) )|((style|class|id)="([^"']*)")/gm);
 
                 let cmStyles = {
                     lineNumbers: true,
                     mode: "htmlmixed",
                     theme: "monokai",
                     styleActiveLine: true,
-                }
+                };
 
                 let inputCodeMirror = CodeMirror.fromTextArea($input[0], cmStyles);
                 //let outputHtmlCodeMirror = CodeMirror.fromTextArea($outputHtml[0], cmStyles);
@@ -121,8 +123,10 @@
                         // Write the HTML without the inline style attributes to the output textarea.
                         $outputHtml.val(outputHtmlString);
 
+                        console.log(test);
+
                         // Check each style attribute which was found in the HTML and do some stuff.
-                        for(let a = 0; cssItems.length > a; a++) {
+                        /*for(let a = 0; cssItems.length > a; a++) {
                             let cssItem = cssItems[a];
                             let currentItemIndex = inputValue.indexOf(cssItem) - 1; // -1 is needed to get the correct start item.
                             let tagStart = 0;
@@ -186,7 +190,7 @@
 
                             // Create array with css attributes.
                             newCssOutput.push(cssSelector + ' {' + cssItem + ' }');
-                        }
+                        }*/
 
                         // Sort the array for a better view.
                         newCssOutput.sort();
