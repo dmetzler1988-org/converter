@@ -123,6 +123,9 @@
                         // Write the HTML without the inline style attributes to the output textarea.
                         $outputHtml.val(outputHtmlString);
 
+                        let test = inputValue.match(regexFullFiltered);
+                        //let test2 = regexFullFiltered.exec(inputValue);
+
                         console.log(test);
 
                         // Check each style attribute which was found in the HTML and do some stuff.
