@@ -46,6 +46,8 @@
     <body>
         <main>
             <a href="https://html-cleaner.com/" target="_blank">https://html-cleaner.com/</a>
+            <a href="https://flaviocopes.com/javascript-regular-expressions/" target="_blank">https://flaviocopes.com/javascript-regular-expressions/</a>
+            <a href="https://javascript.info/regexp-groups" target="_blank">https://javascript.info/regexp-groups</a>
 
             <textarea id="input" rows="20">
 <h2><span style="color: #4b67a1;" class="demo">This is a demo</span> - <span style="color: #008000;">You can edit the text! <img src="/images/smiley.png" alt="laughing" /> ♥</span></h2>
@@ -126,6 +128,7 @@
                         let test = inputValue.match(regexFullFiltered);
                         //let test2 = regexFullFiltered.exec(inputValue);
 
+                        console.log(test.length);
                         console.log(test);
 
                         // Check each style attribute which was found in the HTML and do some stuff.
