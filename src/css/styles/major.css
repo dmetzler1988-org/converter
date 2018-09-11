@@ -1,0 +1,44 @@
+header.major {
+    margin: 0 0 4em 0;
+    position: relative;
+    text-align: center;
+}
+
+header.major:after {
+    background: #e44c65;
+    content: '';
+    display: inline-block;
+    height: 0.2em;
+    max-width: 20em;
+    width: 75%;
+}
+
+header.major  p {
+    color: #ffffff;
+    position: relative;
+    margin: 0 0 1.5em 0;
+}
+
+header.major  h2 + p {
+    font-size: 1.25em;
+    margin-top: -1em;
+    line-height: 1.75em;
+}
+
+header.major  h3 + p {
+    font-size: 1.1em;
+    margin-top: -0.8em;
+    line-height: 1.75em;
+}
+
+header.major  h4 + p,
+header.major  h5 + p,
+header.major  h6 + p {
+    font-size: 0.9em;
+    margin-top: -0.6em;
+    line-height: 1.5em;
+}
+
+footer.major {
+    margin: 4em 0 0 0;
+}

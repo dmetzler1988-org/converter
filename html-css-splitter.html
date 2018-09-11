@@ -9,8 +9,8 @@
         </script>
 
         <!-- CodeMirror Plain with css theme. -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/codemirror.min.css"></link>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/theme/monokai.min.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/codemirror.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/theme/monokai.min.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/codemirror.min.js"></script>
 
         <!-- CodeMirror Modes -->
@@ -23,31 +23,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.40.0/addon/selection/active-line.min.js"></script>
 
         <!-- Custom modifications -->
-        <style type="text/css">
-            main {
-                display: block;
-                width: 90%;
-                margin: 40px auto;
-            }
-            textarea {
-                display: block;
-                width: 100%;
-                margin: 20px 0;
-            }
-            .CodeMirror {
-                display: block;
-                width: 100%;
-                margin: 20px 0;
-                border-top: 1px solid black;
-                border-bottom: 1px solid black;
-            }
-        </style>
+        <link rel="stylesheet" href="./src/css/main.css"/>
     </head>
     <body>
-        <main>
-            <a href="https://html-cleaner.com/" target="_blank">https://html-cleaner.com/</a>
+        <main class="wrapper">
+            <header class="major">
+                <h2>remove inline-style</h2>
+                <p>Input a inline-style html-code and encode or decode it as you like.</p>
+            </header>
 
-            <textarea id="input" rows="20">
+            <section>
+                <textarea id="input" rows="20">
 <h2><span style="color: #4b67a1;" class="demo">This is a demo</span> - <span style="color: #008000;">You can edit the text! <img src="/images/smiley.png" alt="laughing" /> ♥</span></h2>
 <p>Type in the <strong>visual editor</strong> on the left or the <strong>source editor</strong> on the right and see them both change in real time.</p>
 <p>Set up the cleaning preferences below and click the <strong style="box-shadow: 3px 3px 3px #aaa; border-radius: 5px; padding: 0 5px; background-color: #2b3a56; color: #fff;"> Clean HTML</strong> button to clean the HTML source code.</p>
@@ -73,10 +59,15 @@
 <p><strong><span style="color: #366691; font-size: 20px; text-shadow: 4px 10px 4px #888;">      HTML-Cleaner.com</span></strong></p>
 <p class="p-class">Please find below all the cleaning preferences, the Find And Replace tool, the Lorem-ipsum generator, the <a href="https://html-cleaner.com/case-converter/">Case Converter</a> and much more!</p>
 <p id="p-id">Don't forget to save this link into your bookmarks and share it with your friends.</p>
-            </textarea>
-            <button id="convert" type="button">Convert</button>
-            <textarea id="outputHtml" rows="20"></textarea>
-            <textarea id="outputCss" rows="20"></textarea>
+                </textarea>
+                <button id="convert" type="button" class="button">Convert</button>
+                <textarea id="outputHtml" rows="20"></textarea>
+                <textarea id="outputCss" rows="20"></textarea>
+            </section>
+
+            <footer class="major">
+                <a href="https://html-cleaner.com/" target="_blank">https://html-cleaner.com/</a>
+            </footer>
         </main>
 
         <script type="application/javascript">

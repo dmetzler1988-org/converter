@@ -1,0 +1,12 @@
+/* Styling help from Steven Rogers - thx for this :) */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
+
+@import url('styles/reset.css');
+@import url('styles/base.css');
+@import url('styles/major.css');
+@import url('styles/button.css');
+@import url('styles/form.css');
+@import url('styles/toSort.css');
+
+@import url('styles/codemirror.css');
