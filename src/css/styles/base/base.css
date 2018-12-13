@@ -1,4 +1,8 @@
 /* Basic */
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     background: #1c1d26;
 }
@@ -6,9 +10,51 @@ html, body {
 body, input, select, textarea {
     color: rgba(255, 255, 255, 0.75);
     font-family: "Roboto", Helvetica, sans-serif;
-    font-size: 15pt;
+    font-size: 18px;
     font-weight: 100;
-    line-height: 1.75em;
+    line-height: 1.75;
+}
+
+input, select, textarea {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1680px) {
+    body {
+        font-size: 18px;
+    }
+
+    input, select, textarea {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    body {
+        font-size: 16px;
+    }
+
+    input, select, textarea {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    input, select, textarea {
+        font-size: 10px;
+    }
+
+    /* Button */
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    .button {
+        padding: 0;
+    }
 }
 
 a {
@@ -57,14 +103,32 @@ h2 {
     letter-spacing: -0.025em;
 }
 
+@media screen and (max-width: 740px) {
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
 h3 {
     font-size: 1.35em;
     line-height: 1.5em;
 }
 
+@media screen and (max-width: 740px) {
+    h3 {
+        font-size: 1.2em;
+    }
+}
+
 h4 {
     font-size: 1.1em;
     line-height: 1.5em;
+}
+
+@media screen and (max-width: 740px) {
+    h4 {
+        font-size: 1em;
+    }
 }
 
 h5 {

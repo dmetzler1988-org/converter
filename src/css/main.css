@@ -2,11 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
 
-@import url('styles/reset.css');
-@import url('styles/base.css');
-@import url('styles/major.css');
-@import url('styles/button.css');
-@import url('styles/form.css');
-@import url('styles/toSort.css');
+/* Base components. */
+@import url('styles/base/reset.css');
+@import url('styles/base/base.css');
+@import url('styles/base/major.css');
+@import url('styles/base/button.css');
+@import url('styles/base/form.css');
 
-@import url('styles/codemirror.css');
+@import url('styles/base/codemirror.css');
+
+/* Site specific components. */
+@import url('styles/site-components/converter.css');
