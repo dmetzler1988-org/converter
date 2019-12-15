@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Converter for colors and sizes</title>
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+        <!-- Custom modifications -->
+        <link rel="stylesheet" href="./src/css/main.css"/>
+    </head>
+    <body class="converter">
+        <div class="wrapper">
+            <div class="converter--screen-sizes">
+                <h2>Convert sizes</h2>
+
+                https://nekocalc.com/de
+                <div class="converter--screen-sizes-item">
+                    <label for="sizes-base">Base size for calculation (REM and EM)</label>
+                    <input id="sizes-base" type="text" placeholder="16" value="16">
+                </div>
+
+                <div class="converter--screen-sizes-item">
+                    <label>Insert value</label><br>
+                    <input id="sizesPx" type="text" placeholder="16">px
+                    <input id="sizesRem" type="text" placeholder="1">rem
+                    <input id="sizesEm" type="text" placeholder="1">em
+                    <input id="sizesPt" type="text" placeholder="1">pt
+                </div>
+
+                <button id="button-convert-screen-sizes" class="button converter--button-color">Convert sizes</button>
+                <button id="button-clean-screen-sizes" class="button converter--button-clean">Reset sizes</button>
+
+                <div class="converter--screen-sizes-outputs">
+                    <br/><br/>
+                    PX: <span id="sizesPx-output"></span><br/><br/>
+                    REM: <span id="sizesRem-output"></span><br/><br/>
+                    EM: <span id="sizesEm-output"></span><br/><br/>
+                    PT: <span id="sizesPt-output"></span><br/><br/>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript" src="./src/js/site-components/converter-screen-sizes.js"></script>
+</html>

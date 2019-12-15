@@ -1,10 +1,7 @@
 //import hexConverter from 'color-converter/hex-converter';
 //import rgbConverter from './color-converter/rgb-converter';
 
-const typedSizesOutput = document.getElementById('typed-sizes-output');
-
 const sizesBase = document.getElementById('sizes-base');
-
 
 const sizesPx = document.getElementById('sizesPx');
 // https://www.ninjaunits.com/converters/pixels/pixels-rem/
@@ -20,8 +17,8 @@ const sizeRemOutputField = document.getElementById('sizesRem-output');
 const sizeEmOutputField = document.getElementById('sizesEm-output');
 const sizePtOutputField = document.getElementById('sizesPt-output');
 
-const btnConvertSizes = document.getElementById('button-convert-sizes');
-const btnCleanSizes = document.getElementById('button-clean-sizes');
+const btnConvertSizes = document.getElementById('button-convert-screen-sizes');
+const btnCleanSizes = document.getElementById('button-clean-screen-sizes');
 
 let sizeBase;
 let sizePxValue;
@@ -35,14 +32,11 @@ btnCleanSizes.addEventListener('click', (event) => {
 });
 
 function cleanSizes() {
-    remBase.value = 16;
-    remPx.value = '';
-    remRem.value = '';
-    emBase.value = 16;
-    emPx.value = '';
-    emEm.value = '';
-    ptPx.value = '';
-    ptPt.value = '';
+    sizesBase.value = 16;
+    sizesPx.value = '';
+    sizesRem.value = '';
+    sizesEm.value = '';
+    sizesPt.value = '';
 
     sizePxOutputField.innerText = '';
     sizeRemOutputField.innerText = '';
