@@ -11,11 +11,14 @@ const sizesEm = document.getElementById('sizesEm');
 // https://www.ninjaunits.com/converters/pixels/pixels-points/
 const ptBase = 0.75;
 const sizesPt = document.getElementById('sizesPt');
+//
+const sizesPercent = document.getElementById('sizesPercent');
 
 const sizePxOutputField = document.getElementById('sizesPx-output');
 const sizeRemOutputField = document.getElementById('sizesRem-output');
 const sizeEmOutputField = document.getElementById('sizesEm-output');
 const sizePtOutputField = document.getElementById('sizesPt-output');
+const sizePercentOutputField = document.getElementById('sizesPercent-output');
 
 const btnConvertSizes = document.getElementById('button-convert-screen-sizes');
 const btnCleanSizes = document.getElementById('button-clean-screen-sizes');
@@ -58,12 +61,14 @@ function convertSizes() {
         convertPxToRem(sizePxValue);
         convertPxToEm(sizePxValue);
         convertPxToPt(sizePxValue);
+        convertPxToPercent(sizePxValue);
     }
 
     if (sizesRem.value !== '') {
         sizePxValue = convertRemToPx();
         convertPxToEm(sizePxValue);
         convertPxToPt(sizePxValue);
+        convertPxToPercent(sizePxValue);
 
         sizeRemOutputField.innerText = sizesRem.value;
     }
@@ -72,6 +77,7 @@ function convertSizes() {
         sizePxValue = convertEmToPx();
         convertPxToRem(sizePxValue);
         convertPxToPt(sizePxValue);
+        convertPxToPercent(sizePxValue);
 
         sizeEmOutputField.innerText = sizesEm.value;
     }
@@ -80,8 +86,18 @@ function convertSizes() {
         sizePxValue = convertPtToPx();
         convertPxToRem(sizePxValue);
         convertPxToEm(sizePxValue);
+        convertPxToPercent(sizePxValue);
 
         sizePtOutputField.innerText = sizesPt.value;
+    }
+
+    if (sizesPercent.value !== '') {
+        sizePxValue = convertPercentToPx();
+        convertPxToRem(sizePxValue);
+        convertPxToEm(sizePxValue);
+        convertPxToPt(sizePxValue);
+
+        sizePercentOutputField.innerText = sizesPercent.value;
     }
 
     sizePxOutputField.innerText = sizePxValue;
@@ -109,4 +125,16 @@ function convertPxToPt(pxValue) {
 
 function convertPtToPx() {
     return sizesPt.value / ptBase;
+}
+
+function convertPxToPercent(pxValue) {
+    const ratio = 100 / sizeBase;
+
+    sizePercentOutputField.innerText = pxValue * ratio;
+}
+
+function convertPercentToPx() {
+    const ratio = 100 / sizeBase;
+
+    return sizesPercent.value / ratio;
 }
