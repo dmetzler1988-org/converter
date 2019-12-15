@@ -68,3 +68,13 @@ header.major h6 + p {
 footer.major {
     margin: 4em 0 0 0;
 }
+
+footer.credits {
+    display: block;
+    width: 90%;
+    max-width: 1400px;
+    margin: 60px auto 20px;
+    padding: 0 20px;
+    font-size: 10px;
+    line-height: 1.2;
+}
