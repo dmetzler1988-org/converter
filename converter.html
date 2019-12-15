@@ -16,12 +16,12 @@
                 <p>Calculation examples from <a href="http://www.javascripter.net/faq/rgbtohex.htm" target="_blank">javascripter.net</a>.</p>
 
                 <div class="converter--color-item">
-                    <label for="colorHex">Type in HEX color</label>
+                    <label for="colorHex">Insert HEX color</label>
                     <input id="colorHex" type="text" placeholder="#ff00ff">
                 </div>
 
                 <div class="converter--color-item">
-                    <label>Type in RGB color</label>
+                    <label>Insert RGB color</label>
                     <input id="colorRgb1" type="text" placeholder="255">
                     <input id="colorRgb2" type="text" placeholder="0">
                     <input id="colorRgb3" type="text" placeholder="175">
@@ -45,42 +45,33 @@
                 <h2>Convert sizes</h2>
 
                 https://nekocalc.com/de
-
-                <p>Calculation examples from <a href="https://www.ninjaunits.com/converters/pixels/pixels-rem/" target="_blank">ninjaunits.net</a>.</p>
-                <p>Calculation examples from <a href="https://nekocalc.com/de/px-zu-rem-umrechner" target="_blank">nekocalc.net</a>.</p>
-
                 <div class="converter--sizes-item">
-                    <label>PX <-> REM</label>
-                    <input id="sizesPxToRem-base" type="text" placeholder="16" value="16">base
-                    <input id="sizesPxToRem-px" type="text" placeholder="1">px
-                    <input id="sizesPxToRem-rem" type="text" placeholder="0">rem
+                    <label for="sizes-base">Base size for calculation (REM and EM)</label>
+                    <input id="sizes-base" type="text" placeholder="16" value="16">
                 </div>
 
-                https://www.omnicalculator.com/conversion/px-to-em
-                http://pxtoem.com/
-                https://nekocalc.com/de/px-zu-em-umrechner
-
                 <div class="converter--sizes-item">
-                    <label>PX <-> EM</label>
-                    <input id="sizesPxToEm-base" type="text" placeholder="16" value="16">base
-                    <input id="sizesPxToEm-px" type="text" placeholder="1">px
-                    <input id="sizesPxToEm-em" type="text" placeholder="0">em
+                    <label>Insert value</label><br>
+                    <input id="sizesPx" type="text" placeholder="16">px
+                    <input id="sizesRem" type="text" placeholder="1">rem
+                    <input id="sizesEm" type="text" placeholder="1">em
+                    <input id="sizesPt" type="text" placeholder="1">pt
                 </div>
 
-                http://www.endmemo.com/sconvert/pixelpoint.php
-                https://www.ninjaunits.com/converters/pixels/pixels-points/
+                <button id="button-convert-sizes" class="button converter--button-color">Convert sizes</button>
+                <button id="button-clean-sizes" class="button converter--button-clean">Clean sizes</button>
 
-                <div class="converter--sizes-item">
-                    <label>PX <-> PT</label>
-                    <input id="sizesPxToPt-base" type="text" placeholder="16" value="16">base
-                    <input id="sizesPxToPt-px" type="text" placeholder="1">px
-                    <input id="sizesPxToPt-pt" type="text" placeholder="0">pt
+                <div class="converter--sizes-outputs">
+                    <br/><br/>
+                    PX: <span id="sizesPx-output"></span><br/><br/>
+                    REM: <span id="sizesRem-output"></span><br/><br/>
+                    EM: <span id="sizesEm-output"></span><br/><br/>
+                    PT: <span id="sizesPt-output"></span><br/><br/>
                 </div>
-
-                <div id="typed-sizes-output" class="converter--sizes-typed-output"></div>
             </div>
         </div>
     </body>
 
-    <script type="text/javascript" src="./src/js/site-components/converter.js"></script>
+    <script type="text/javascript" src="./src/js/site-components/converter-colors.js"></script>
+    <script type="text/javascript" src="./src/js/site-components/converter-sizes.js"></script>
 </html>

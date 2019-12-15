@@ -48,6 +48,8 @@ function colorOnKeyPressHex(event) {
 function convertColors() {
     if (hexField.value !== '' && rgbField1.value !== '' && rgbField2.value !== '' && rgbField3.value !== '') {
         alert('Only set values for HEX or RGB. Not both!\nElse the last (RGB) will be converted.');
+
+        return;
     }
 
     // HEX to RGB
