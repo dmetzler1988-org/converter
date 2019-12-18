@@ -15,3 +15,10 @@ and write issues, if you have additional ideas :)
 ## Additional information
 
 Please write an issue if you found some bugs or you have any further ideas for an converter.
+
+## Credits
+
+Thank's a lot to each who is marked here!
+
+- Steven R. for CSS sharing.
+- This Open Source project is made with [JetBrains - IntelliJ IDEA](https://www.jetbrains.com/?from=ConverterPage)
