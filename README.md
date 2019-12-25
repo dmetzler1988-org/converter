@@ -20,5 +20,5 @@ Please write an issue if you found some bugs or you have any further ideas for a
 
 Thank's a lot to each who is marked here!
 
-- Steven R. for CSS sharing.
+- [Steven R.](https://github.com/jeansaucisson) for CSS sharing.
 - This Open Source project is made with [JetBrains - IntelliJ IDEA](https://www.jetbrains.com/?from=ConverterPage)
