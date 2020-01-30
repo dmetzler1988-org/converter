@@ -21,6 +21,15 @@ let rgbColor = '';
 let cmykColor = '';
 let hsvColor = '';
 
+// Add key press event listeners.
+document.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+        convertColors();
+    } else if (event.key === 'Escape') {
+        cleanColors();
+    }
+});
+
 hexField.addEventListener('keyup', (event) => {
     colorOnKeyPressHex(event);
 });

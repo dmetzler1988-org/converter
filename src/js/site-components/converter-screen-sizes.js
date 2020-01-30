@@ -26,6 +26,15 @@ const btnCleanSizes = document.getElementById('button-clean-screen-sizes');
 let sizeBase;
 let sizePxValue;
 
+// Add key press event listeners.
+document.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+        convertSizes();
+    } else if (event.key === 'Escape') {
+        cleanSizes();
+    }
+});
+
 btnConvertSizes.addEventListener('click', (event) => {
     convertSizes();
 });
