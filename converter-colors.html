@@ -5,47 +5,73 @@
         <title>Converter for colors and sizes</title>
         <link rel="shortcut icon" type="image/png" href="src/images/favicons/favicon-colors.png">
 
-        <!-- Custom modifications -->
-        <link rel="stylesheet" href="./src/css/main.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./public/main.css"/>
     </head>
     <body class="converter">
-        <div class="wrapper">
-            <div class="converter--color">
-                <h2>Convert colors</h2>
+        <div class="container">
+            <div class="converter--color row">
+                <div class="col s12">
+                    <h2>Convert colors</h2>
 
-                <p>Calculation examples from <a href="http://www.javascripter.net/faq/rgbtohex.htm" target="_blank">javascripter.net</a>.</p>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="colorHex" type="text" placeholder="#ff00ff">
+                            <label for="colorHex">Insert HEX color</label>
+                        </div>
+                    </div>
 
-                <div class="converter--color-item">
-                    <label for="colorHex">Insert HEX color</label>
-                    <input id="colorHex" type="text" placeholder="#ff00ff">
-                </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <input id="colorRgb1" type="text" placeholder="255">
+                                    <label>Insert RGB color</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="colorRgb2" type="text" placeholder="0">
+                                </div>
+                                <div class="input-field col s3">
+                                    <input id="colorRgb3" type="text" placeholder="175">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="converter--color-item">
-                    <label>Insert RGB color</label>
-                    <input id="colorRgb1" type="text" placeholder="255">
-                    <input id="colorRgb2" type="text" placeholder="0">
-                    <input id="colorRgb3" type="text" placeholder="175">
-                </div>
+                    <button id="button-convert-colors" class="btn waves-effect waves-light">Convert colors
+                        <i class="material-icons right">cached</i>
+                    </button>
+                    <button id="button-clean-colors" class="btn waves-effect waves-light">Clean colors
+                        <i class="material-icons right">delete</i>
+                    </button>
 
-                <button id="button-convert-colors" class="button converter--button-color">Convert colors</button>
-                <button id="button-clean-colors" class="button converter--button-clean">Clean colors</button>
+                    <div id="typed-color-output" class="converter--color-typed-output"></div>
 
-                <div id="typed-color-output" class="converter--color-typed-output"></div>
-
-                <div class="converter--color-outputs">
-                    <br/><br/>
-                    HEX: <span id="colorHex-output"></span><br/><br/>
-                    RGB: <span id="colorRgb-output"></span><br/><br/>
-                    CMYK: <span id="colorCmyk-output"></span><br/><br/>
-                    HSV: <span id="colorHsv-output"></span><br/><br/>
+                    <div class="converter--color-outputs row">
+                        <div class="col s12 m6 l3">
+                            <h6>HEX:</h6>
+                            <span id="colorHex-output"></span>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <h6>RGB:</h6>
+                            <span id="colorRgb-output"></span>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <h6>CMYK:</h6>
+                            <span id="colorCmyk-output"></span>
+                        </div>
+                        <div class="col s12 m6 l3">
+                            <h6>HSV:</h6>
+                            <span id="colorHsv-output"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
 
-    <!--<script type="text/javascript" src="./src/js/site-components/converter-colors.js"></script>-->
-    <script type="text/javascript" src="./public/main.js"></script>
-    <script type="text/javascript">
-        window.ColorConverter.init();
-    </script>
+        <script type="text/javascript" src="./public/main.js"></script>
+        <script type="text/javascript">
+            window.ColorConverter.init();
+        </script>
+    </body>
 </html>

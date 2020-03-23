@@ -1,5 +1,8 @@
 //import hexConverter from 'color-converter/hex-converter';
 //import rgbConverter from './color-converter/rgb-converter';
+
+// http://www.javascripter.net/faq/rgbtohex.htm
+// TODO: trim CMYK and HSV to 4 decimals.
 export const init = () => {
     const typedColorOutput = document.getElementById('typed-color-output');
 

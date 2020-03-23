@@ -1,1 +1,9 @@
 @import "node_modules/materialize-css/sass/materialize";
+
+.converter--color-typed-output {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 20px 0;
+    background: transparent;
+}

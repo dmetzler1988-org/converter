@@ -1,3 +1,5 @@
+window.Materialize = require("materialize-css/dist/js/materialize.min");
+
 const ColorConverter = require('./components/converter-colors');
 //ColorConverter.init();
 window.ColorConverter = ColorConverter;
