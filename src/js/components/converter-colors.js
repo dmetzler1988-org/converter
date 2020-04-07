@@ -2,7 +2,6 @@
 //import rgbConverter from './color-converter/rgb-converter';
 
 // http://www.javascripter.net/faq/rgbtohex.htm
-// TODO: trim CMYK and HSV to 4 decimals.
 export const init = () => {
     const typedColorOutput = document.getElementById('typed-color-output');
 
@@ -24,7 +23,7 @@ export const init = () => {
     let cmykColor = '';
     let hsvColor = '';
 
-// Add key press event listeners.
+    // Add key press event listeners.
     document.addEventListener('keyup', (event) => {
         if (event.key === 'Enter') {
             convertColors();
@@ -37,6 +36,17 @@ export const init = () => {
         colorOnKeyPressHex(event);
     });
 
+    // TODO: Add RGB field colorfill for colorbox.
+    rgbField1.addEventListener('keyup', (event) => {
+        colorOnKeyPressRgb(event);
+    });
+    rgbField2.addEventListener('keyup', (event) => {
+        colorOnKeyPressRgb(event);
+    });
+    rgbField3.addEventListener('keyup', (event) => {
+        colorOnKeyPressRgb(event);
+    });
+
     btnConvertColors.addEventListener('click', (event) => {
         convertColors();
     });
@@ -45,7 +55,7 @@ export const init = () => {
         cleanColors();
     });
 
-// Display the input color while input. Hide if color is wrong.
+    // Display the input color while input. Hide if color is wrong.
     function colorOnKeyPressHex(event) {
         const $el = event.currentTarget;
         const value = $el.value;
@@ -57,6 +67,31 @@ export const init = () => {
         }
     }
 
+    // Display the input color while input. Hide if color is wrong.
+    function colorOnKeyPressRgb(event) {
+        const $el = event.currentTarget;
+        const value = $el.value;
+
+        // Check if Tab is pressed.
+        if (checkKeyCode(event, 9)) {
+            return;
+        }
+
+        if (value.length >= 1 && value.length <= 3 && value >= 0 && value <= 255) {
+            let red = rgbField1.value ? rgbField1.value : 0;
+            let green = rgbField2.value ? rgbField2.value : 0;
+            let blue = rgbField3.value ? rgbField3.value : 0;
+
+            typedColorOutput.style.backgroundColor = `rgb(${red}, ${green}, ${blue}`;
+        } else if (rgbField1.value.length === 0 && rgbField2.value.length === 0 && rgbField3.value.length === 0) {
+            typedColorOutput.style.backgroundColor = 'transparent';
+        } else {
+            alert('Your input is not correct!\nOnly values between 0 and 255 are allowed!');
+
+            typedColorOutput.style.backgroundColor = 'transparent';
+        }
+    }
+
     function convertColors() {
         if (hexField.value !== '' && rgbField1.value !== '' && rgbField2.value !== '' && rgbField3.value !== '') {
             alert('Only set values for HEX or RGB. Not both!\nElse the last (RGB) will be converted.');
@@ -64,7 +99,7 @@ export const init = () => {
             return;
         }
 
-        // HEX to RGB
+        // Convert HEX
         if (hexField.value !== '') {
             // RGB converter
             let R = hex2R(hexField.value);
@@ -76,35 +111,35 @@ export const init = () => {
 
             // RGB converter
             rgbColor = [R, G, B];
-            colorRgbOutputField.innerText = 'R: ' + rgbColor[0] + ', G: ' + rgbColor[1] + ', B: ' + rgbColor[2];
+            colorRgbOutputField.innerText = 'R: ' + rgbColor[0] + '\nG: ' + rgbColor[1] + '\nB: ' + rgbColor[2];
 
             // CMYK converter
             cmykColor = hex2cmyk(hexField.value);
-            colorCmykOutputField.innerText = 'C: ' + cmykColor[0] + ', M: ' + cmykColor[1] + ', Y: ' + cmykColor[2] + ', K: ' + cmykColor[3];
+            colorCmykOutputField.innerText = 'C: ' + cmykColor[0] + '\nM: ' + cmykColor[1] + '\nY: ' + cmykColor[2] + '\nK: ' + cmykColor[3];
 
             // HSV converter - needs timout to make sure, that RGB converter is finished before.
             setTimeout(() => {
                 hsvColor = rgb2hsv(rgbColor[0], rgbColor[1], rgbColor[2]);
-                colorHsvOutputField.innerText = 'H: ' + hsvColor[0] + ', S: ' + hsvColor[1] + ', V: ' + hsvColor[2];
+                colorHsvOutputField.innerText = 'H: ' + hsvColor[0] + '\nS: ' + hsvColor[1] + '\nV: ' + hsvColor[2];
             }, 50);
         }
 
-        // RGB to HEX, RGB, CMYK, HSV
+        // Convert RGB
         if (rgbField1.value !== '' && rgbField2.value !== '' && rgbField3.value !== '') {
             // HEX converter
             hexColor = rgb2Hex(rgbField1.value, rgbField2.value, rgbField3.value);
             colorHexOutputField.innerText = '#' + hexColor;
 
             // RGB output
-            colorRgbOutputField.innerText = 'R: ' + rgbField1.value + ', G: ' + rgbField2.value + ', B: ' + rgbField3.value;
+            colorRgbOutputField.innerText = 'R: ' + rgbField1.value + '\nG: ' + rgbField2.value + '\nB: ' + rgbField3.value;
 
             // CMYK converter
             cmykColor = rgb2cmyk(rgbField1.value, rgbField2.value, rgbField3.value);
-            colorCmykOutputField.innerText = 'C: ' + cmykColor[0] + ', M: ' + cmykColor[1] + ', Y: ' + cmykColor[2] + ', K: ' + cmykColor[3];
+            colorCmykOutputField.innerText = 'C: ' + cmykColor[0] + '\nM: ' + cmykColor[1] + '\nY: ' + cmykColor[2] + '\nK: ' + cmykColor[3];
 
             // HSV converter
             hsvColor = rgb2hsv(rgbField1.value, rgbField2.value, rgbField3.value);
-            colorHsvOutputField.innerText = 'H: ' + hsvColor[0] + ', S: ' + hsvColor[1] + ', V: ' + hsvColor[2];
+            colorHsvOutputField.innerText = 'H: ' + hsvColor[0] + '\nS: ' + hsvColor[1] + '\nV: ' + hsvColor[2];
         }
     }
 
@@ -117,9 +152,10 @@ export const init = () => {
         colorHexOutputField.innerText = '';
         colorCmykOutputField.innerText = '';
         colorHsvOutputField.innerText = '';
+        typedColorOutput.style.backgroundColor = 'transparent';
     }
 
-// Converter HEX to RGB.
+    // Converter HEX to RGB.
     function hex2R(h) {
         return parseInt((cutHex(h)).substring(0, 2), 16)
     }
@@ -136,7 +172,7 @@ export const init = () => {
         return (h.charAt(0) == '#') ? h.substring(1, 7) : h
     }
 
-// Converter HEX to CMYK.
+    // Converter HEX to CMYK.
     function hex2cmyk(hex) {
         let computedC = 0;
         let computedM = 0;
@@ -176,10 +212,15 @@ export const init = () => {
         computedY = (computedY - minCMY) / (1 - minCMY);
         computedK = minCMY;
 
-        return [computedC, computedM, computedY, computedK];
+        return [
+            computedC.toFixed(4),
+            computedM.toFixed(4),
+            computedY.toFixed(4),
+            computedK.toFixed(4)
+        ];
     }
 
-// Converter RGB to HEX.
+    // Converter RGB to HEX.
     function rgb2Hex(R, G, B) {
         return toHex(R) + toHex(G) + toHex(B)
     }
@@ -193,7 +234,7 @@ export const init = () => {
             + '0123456789ABCDEF'.charAt(n % 16);
     }
 
-// Converter RGB to CMYK.
+    // Converter RGB to CMYK.
     function rgb2cmyk(red, green, blue) {
         let computedC = 0;
         let computedM = 0;
@@ -233,10 +274,15 @@ export const init = () => {
         computedY = (computedY - minCMY) / (1 - minCMY);
         computedK = minCMY;
 
-        return [computedC, computedM, computedY, computedK];
+        return [
+            computedC.toFixed(4),
+            computedM.toFixed(4),
+            computedY.toFixed(4),
+            computedK.toFixed(4)
+        ];
     }
 
-// Converter RGB to HSV.
+    // Converter RGB to HSV.
     function rgb2hsv(red, green, blue) {
         let computedH = 0;
         let computedS = 0;
@@ -279,6 +325,24 @@ export const init = () => {
         computedS = (maxRGB - minRGB) / maxRGB;
         computedV = maxRGB;
 
-        return [computedH, computedS, computedV];
+        return [
+            computedH.toFixed(4),
+            computedS.toFixed(4),
+            computedV.toFixed(4)
+        ];
+    }
+
+    function checkKeyCode(event, keyCode) {
+        let isSame = false;
+
+        if (event.key === keyCode) {
+            isSame = true;
+        } else if (event.keyIdentifier === keyCode) {
+            isSame = true;
+        } else if (event.keyCode === keyCode) {
+            isSame = true;
+        }
+
+        return isSame;
     }
 };
