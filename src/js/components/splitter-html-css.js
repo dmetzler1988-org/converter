@@ -1,3 +1,4 @@
+// https://html-cleaner.com/
 // TODO: Fix CodeMirror that it works also on the two output textarea.
 // TODO: Modify code to work with regex instead of loops.
 // (class="[a-zA_Z 0-9-_]*")|(id="[a-zA_Z 0-9-_]*")|(\<[a-zA_Z] )|(style="[a-zA_Z 0-9-_]*")

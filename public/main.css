@@ -6525,12 +6525,28 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem; } }
 
+.converter--screen-sizes--item label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px; }
+
+.converter--screen-sizes--item input[type=text] {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  max-width: 100%;
+  margin-right: 10px;
+  text-align: center; }
+
 .converter--color-typed-output {
   display: block;
   width: 50px;
   height: 50px;
   margin: 20px 0;
   background: transparent; }
+
+.content__is-center {
+  text-align: center; }
 
 .content__is-right {
   text-align: right; }

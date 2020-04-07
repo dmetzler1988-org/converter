@@ -7,49 +7,99 @@
         <title>Converter for screen sizes</title>
         <link rel="shortcut icon" type="image/png" href="src/images/favicons/favicon-screen-sizes.png">
 
-        <!-- Custom modifications -->
-        <link rel="stylesheet" href="./src/css/main.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./public/main.css"/>
     </head>
     <body class="converter">
-        <div class="wrapper">
-            <div class="converter--screen-sizes">
-                <h2>Convert sizes</h2>
+        <div class="container">
+            <div class="converter--screen-sizes row">
+                <div class="col s12">
+                    <header class="row">
+                        <div class="col s12">
+                            <h2>Convert sizes</h2>
+                        </div>
+                    </header>
 
-                <!--https://nekocalc.com/de-->
-                <div class="converter--screen-sizes-item">
-                    <label for="sizes-base">Base size for calculation (REM, EM and %)</label>
-                    <input id="sizes-base" type="text" placeholder="16" value="16">
-                </div>
+                    <main>
+                        <div class="row">
+                            <div class="col s12">
+                                <!--https://nekocalc.com/de-->
+                                <div class="converter--screen-sizes--item">
+                                    <label for="sizes-base">Base size for calculation (REM, EM and %)</label>
+                                    <input id="sizes-base" type="text" placeholder="16" value="16">
+                                </div>
+                            </div>
 
-                <div class="converter--screen-sizes-item">
-                    <label>Insert value</label><br>
-                    <input id="sizesPx" type="text" placeholder="16">px
-                    <input id="sizesRem" type="text" placeholder="1">rem
-                    <input id="sizesEm" type="text" placeholder="1">em
-                    <input id="sizesPt" type="text" placeholder="1">pt
-                    <input id="sizesPercent" type="text" placeholder="100">%
-                </div>
+                            <div class="col s12">
+                                <div class="converter--screen-sizes--item row">
+                                    <div class="col s12">
+                                        <label>Insert value</label>
+                                    </div>
+                                    <div class="col s2 content__is-center">
+                                        <input id="sizesPx" type="text" placeholder="16">
+                                        <label for="sizesPx">px</label>
+                                    </div>
+                                    <div class="col s2 content__is-center">
+                                        <input id="sizesRem" type="text" placeholder="1">
+                                        <label for="sizesPx">rem</label>
+                                    </div>
+                                    <div class="col s2 content__is-center">
+                                        <input id="sizesEm" type="text" placeholder="1">
+                                        <label for="sizesPx">em</label>
+                                    </div>
+                                    <div class="col s2 content__is-center">
+                                        <input id="sizesPt" type="text" placeholder="1">
+                                        <label for="sizesPx">pt</label>
+                                    </div>
+                                    <div class="col s2 content__is-center">
+                                        <input id="sizesPercent" type="text" placeholder="100">
+                                        <label for="sizesPx">%</label>
+                                    </div>
+                                </div>
+                            </div>
 
-                <button id="button-convert-screen-sizes" class="button converter--button-color">Convert sizes</button>
-                <button id="button-clean-screen-sizes" class="button converter--button-clean">Reset sizes</button>
+                            <div class="col s12">
+                                <button id="button-convert-screen-sizes" class="btn waves-effect waves-light">Convert sizes
+                                    <i class="material-icons right">cached</i>
+                                </button>
+                                <button id="button-clean-screen-sizes" class="btn waves-effect waves-light">Reset sizes
+                                    <i class="material-icons right">delete</i>
+                                </button>
+                            </div>
+                        </div>
 
-                <div class="converter--screen-sizes-outputs">
-                    <br/><br/>
-                    PX: <span id="sizesPx-output"></span><br/><br/>
-                    REM: <span id="sizesRem-output"></span><br/><br/>
-                    EM: <span id="sizesEm-output"></span><br/><br/>
-                    PT: <span id="sizesPt-output"></span><br/><br/>
-                    %: <span id="sizesPercent-output"></span><br/><br/>
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="converter--screen-sizes--outputs row">
+                                    <div class="col s2">
+                                        <h6>PX:</h6>
+                                        <span id="sizesPx-output"></span>
+                                    </div>
+                                    <div class="col s2">
+                                        <h6>REM:</h6>
+                                        <span id="sizesRem-output"></span>
+                                    </div>
+                                    <div class="col s2">
+                                        <h6>EM:</h6>
+                                        <span id="sizesEm-output"></span>
+                                    </div>
+                                    <div class="col s2">
+                                        <h6>PT:</h6>
+                                        <span id="sizesPt-output"></span>
+                                    </div>
+                                    <div class="col s2">
+                                        <h6>%:</h6>
+                                        <span id="sizesPercent-output"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
                 </div>
             </div>
         </div>
-
-        <footer class="credits">
-            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        </footer>
     </body>
 
-    <!--<script type="text/javascript" src="./src/js/site-components/converter-screen-sizes.js"></script>-->
     <script type="text/javascript" src="./public/main.js"></script>
     <script type="text/javascript">
         window.ScreenSizesConverter.init();

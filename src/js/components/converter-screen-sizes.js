@@ -2,14 +2,14 @@ export const init = () => {
     const sizesBase = document.getElementById('sizes-base');
 
     const sizesPx = document.getElementById('sizesPx');
-// https://www.ninjaunits.com/converters/pixels/pixels-rem/
+    // https://www.ninjaunits.com/converters/pixels/pixels-rem/
     const sizesRem = document.getElementById('sizesRem');
-// https://www.ninjaunits.com/converters/pixels/pixels-ems/
+    // https://www.ninjaunits.com/converters/pixels/pixels-ems/
     const sizesEm = document.getElementById('sizesEm');
-// https://www.ninjaunits.com/converters/pixels/pixels-points/
+    // https://www.ninjaunits.com/converters/pixels/pixels-points/
     const ptBase = 0.75;
     const sizesPt = document.getElementById('sizesPt');
-//
+    //
     const sizesPercent = document.getElementById('sizesPercent');
 
     const sizePxOutputField = document.getElementById('sizesPx-output');
@@ -24,7 +24,7 @@ export const init = () => {
     let sizeBase;
     let sizePxValue;
 
-// Add key press event listeners.
+    // Add key press event listeners.
     document.addEventListener('keyup', (event) => {
         if (event.key === 'Enter') {
             convertSizes();
@@ -47,11 +47,13 @@ export const init = () => {
         sizesRem.value = '';
         sizesEm.value = '';
         sizesPt.value = '';
+        sizesPercent.value = '';
 
         sizePxOutputField.innerText = '';
         sizeRemOutputField.innerText = '';
         sizeEmOutputField.innerText = '';
         sizePtOutputField.innerText = '';
+        sizePercentOutputField.innerText = '';
     }
 
     function convertSizes() {
@@ -107,7 +109,9 @@ export const init = () => {
             sizePercentOutputField.innerText = sizesPercent.value;
         }
 
-        sizePxOutputField.innerText = sizePxValue;
+        if (sizePxValue) {
+            sizePxOutputField.innerText = sizePxValue;
+        }
     }
 
     function convertPxToRem(pxValue) {

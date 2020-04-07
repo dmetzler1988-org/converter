@@ -1,0 +1,18 @@
+.converter--screen-sizes {
+    &--item {
+        label {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        input[type=text] {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100px;
+            max-width: 100%;
+            margin-right: 10px;
+            text-align: center;
+        }
+    }
+}
