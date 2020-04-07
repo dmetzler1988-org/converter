@@ -11,6 +11,7 @@ export const init = () => {
         const $outputHtml = $('#outputHtml');
         const $outputCss = $('#outputCss');
         const $button = $('#convert');
+        const $demoContentButton = $('#demoContent');
         const regexHtml = new RegExp(/(?= style=").+?(?=").(?<=style=").+?(?<=")/g); // Get the content from style=" to the next " with the space before.
         const regexCss = new RegExp(/(?<=style=").+?(?=")/g); // Get only the content between style=" and the next ".
         const regexCssId = new RegExp(/(?<=id=").+?(?=")/g); // Get only the content between style=" and the next ".
@@ -38,6 +39,8 @@ export const init = () => {
 
                 // Write the HTML without the inline style attributes to the output textarea.
                 $outputHtml.val(outputHtmlString);
+                // Trigger Resize for HTML Output textarea.
+                window.Materialize.textareaAutoResize($outputHtml);
 
                 // Check each style attribute which was found in the HTML and do some stuff.
                 for (let a = 0; cssItems.length > a; a++) {
@@ -111,7 +114,46 @@ export const init = () => {
 
                 // Split array to a string without comma and with a line break.
                 $outputCss.val(newCssOutput.join("\n"));
+                // Trigger Resize for CSS Output textarea.
+                window.Materialize.textareaAutoResize($outputCss);
+
+                // Trigger textField Update to fix label position.
+                window.Materialize.updateTextFields();
             }
-        })
+        });
+
+        $demoContentButton.on('click', (event) => {
+            const demoContent = '<h2><span style="color: #4b67a1;" class="demo">Lorem ipsum</span> - <span style="color: #008000;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr <img src="/images/smiley.png" alt="laughing" /> ♥</span></h2>\n' +
+                '<p>At vero eos et accusam et <strong>justo duo</strong> dolores <strong>et ea</strong>  rebum.</p>\n' +
+                '<p>Stet clita kasd gubergren, no sea takimata sanctus est <strong style="box-shadow: 3px 3px 3px #aaa; border-radius: 5px; padding: 0 5px; background-color: #2b3a56; color: #fff;">Lorem ipsum</strong> dolor sit amet.</p>\n' +
+                '                        <!--This is just a comment.-->\n' +
+                '<table class="demoTable" cellpadding="10">\n' +
+                '    <tbody>\n' +
+                '    <tr id="tr-id tr-multiple-ids" style="text-align: center;">\n' +
+                '        <td><img src="/images/document.png" alt="document" /></td>\n' +
+                '        <td><img src="/images/arrow.png" alt="arrow" /></td>\n' +
+                '        <td><img src="/images/clean.png" alt="clean" width="86" height="122" /></td>\n' +
+                '    </tr>\n' +
+                '    <tr>\n' +
+                '        <td colspan="3"><strong id="strong-id">Lorem ipsum dolor sit amet:</strong>\n' +
+                '            <ol>\n' +
+                '                <li>Step 1</li>\n' +
+                '                <li>Step 2</li>\n' +
+                '                <li>Step 3</li>\n' +
+                '            </ol>\n' +
+                '        </td>\n' +
+                '    </tr>\n' +
+                '    </tbody>\n' +
+                '</table>\n' +
+                '<p><strong><span style="color: #366691; font-size: 20px; text-shadow: 4px 10px 4px #888;">      Lorem Ipsum</span></strong></p>\n' +
+                '<p class="p-class">At vero eos et accusam et justo duo <a href="#">dolores</a> et ea rebum</p>\n' +
+                '<p id="p-id">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>';
+
+            $input.val(demoContent);
+            // Trigger Resize for CSS Output textarea.
+            window.Materialize.textareaAutoResize($input);
+            // Trigger textField Update to fix label position.
+            window.Materialize.updateTextFields();
+        });
     });
 };

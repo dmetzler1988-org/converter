@@ -2,6 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>HTML remove inline style</title>
         <link rel="shortcut icon" type="image/png" href="src/images/favicons/favicon-html-css.png">
 
@@ -29,56 +31,63 @@
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/selection/active-line.min.js"></script>-->
 
         <!-- Custom modifications -->
-        <link rel="stylesheet" href="./src/css/main.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link rel="stylesheet" href="./public/main.css"/>
     </head>
-    <body>
-        <main class="wrapper">
-            <header class="major">
-                <h2>remove inline-style</h2>
-                <p>Input a inline-style html-code and encode or decode it as you like.</p>
-            </header>
+    <body class="html-css-splitter">
+        <main class="container">
+            <div class="row">
+                <div class="col s12">
+                    <header class="major row">
+                        <div class="col s8">
+                            <h2>remove inline-style</h2>
+                            <p>Input a inline-style html-code and encode or decode it as you like.</p>
+                        </div>
+                    </header>
 
-            <section>
-                <textarea id="input" rows="20">
-<h2><span style="color: #4b67a1;" class="demo">This is a demo</span> - <span style="color: #008000;">You can edit the text! <img src="/images/smiley.png" alt="laughing" /> ♥</span></h2>
-<p>Type in the <strong>visual editor</strong> on the left or the <strong>source editor</strong> on the right and see them both change in real time.</p>
-<p>Set up the cleaning preferences below and click the <strong style="box-shadow: 3px 3px 3px #aaa; border-radius: 5px; padding: 0 5px; background-color: #2b3a56; color: #fff;"> Clean HTML</strong> button to clean the HTML source code.</p>
-<!--This is just a comment above the table...-->
-<table class="demoTable" cellpadding="10">
-    <tbody>
-    <tr id="tr-id tr-multiple-ids" style="text-align: center;">
-        <td><img src="/images/document-editors.png" alt="editors" /></td>
-        <td><img src="/images/cleaning-arrow.png" alt="cleaning" /></td>
-        <td><img src="/images/clean-html.png" alt="editors" width="86" height="122" /></td>
-    </tr>
-    <tr>
-        <td colspan="3"><strong id="strong-id">Convert almost any document to clean HTML in three simple steps:</strong>
-            <ol>
-                <li>Paste the content of the Document in the editor</li>
-                <li>Click the Clean HTML (optional)</li>
-                <li>Copy the generated HTML code</li>
-            </ol>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<p><strong><span style="color: #366691; font-size: 20px; text-shadow: 4px 10px 4px #888;">      HTML-Cleaner.com</span></strong></p>
-<p class="p-class">Please find below all the cleaning preferences, the Find And Replace tool, the Lorem-ipsum generator, the <a href="https://html-cleaner.com/case-converter/">Case Converter</a> and much more!</p>
-<p id="p-id">Don't forget to save this link into your bookmarks and share it with your friends.</p>
-                </textarea>
-                <button id="convert" type="button" class="button">Convert</button>
-                <textarea id="outputHtml" rows="20"></textarea>
-                <textarea id="outputCss" rows="20"></textarea>
-            </section>
+                    <section class="row">
+                        <div class="input-field col s12">
+                            <textarea id="input" class="materialize-textarea"></textarea>
+                            <label for="input">HTML with inline CSS - Input Area</label>
+                        </div>
 
-            <footer class="major">
-                <a href="https://html-cleaner.com/" target="_blank">https://html-cleaner.com/</a>
-            </footer>
+                        <div class="col s6">
+                            <button id="convert" type="button" class="btn waves-effect waves-light">Convert
+                                <i class="material-icons right">cached</i>
+                            </button>
+                        </div>
+
+                        <div class="col s6 content__is-right">
+                            <button id="demoContent" type="button" class="waves-effect waves-teal btn-flat">Fill in demo content
+                                <i class="material-icons right">accessible</i>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="row">
+                        <div class="input-field col s12">
+                            <textarea id="outputHtml" class="materialize-textarea"></textarea>
+                            <label for="outputHtml">HTML Output Area</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <textarea id="outputCss" class="materialize-textarea"></textarea>
+                            <label for="outputCss">CSS Output Area</label>
+                        </div>
+                    </section>
+
+                    <footer class="row">
+                        <footer class="major col s12">
+                            <a href="https://html-cleaner.com/" target="_blank">https://html-cleaner.com/</a>
+                        </footer>
+
+                        <footer class="credits col s12">
+                            <div>Fav-Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                        </footer>
+                    </footer>
+                </div>
+            </div>
         </main>
-
-        <footer class="credits">
-            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        </footer>
 
         <!--<script type="text/javascript" src="./src/js/site-components/splitter-html-css.js"></script>-->
         <script type="text/javascript" src="./public/main.js"></script>
