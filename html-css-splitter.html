@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>HTML remove inline style</title>
-        <link rel="shortcut icon" type="image/png" href="src/images/favicons/favicon-html-css.png">
+        <link rel="shortcut icon" type="image/png" href="public/images/favicons/favicon-html-css.png">
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
@@ -35,13 +35,41 @@
         <link rel="stylesheet" href="./public/main.css?v=20200407"/>
     </head>
     <body class="html-css-splitter">
-        <main class="container">
-            <div class="row">
-                <div class="col s12">
-                    <header class="major row">
-                        <div class="col s8">
-                            <h2>remove inline-style</h2>
-                            <p>Input a inline-style html-code and encode or decode it as you like.</p>
+        <header class="header">
+            <div class="header--top">
+                <div class="row">
+                    <div class="col s12 m10 offset-m1">
+                        <h1>HTML-CSS-Splitter</h1>
+                        <h2>Split inline CSS from HTML</h2>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="sidenav sidenav-fixed">
+                <li class="logo">
+                    <a href="/" target="_self">
+                        <img src="public/images/logo.png" alt="converter.dmetzler.io"/>
+                    </a>
+                </li>
+                <li><div class="divider"></div></li>
+                <li class="bold active">
+                    <a href="./../html-css-splitter.html" class="waves-effect waves-teal">html-css-splitter</a>
+                </li>
+                <li class="bold">
+                    <a href="./../converter-colors.html" class="waves-effect waves-teal">Converter Colors</a>
+                </li>
+                <li class="bold">
+                    <a href="./../converter-screen-sizes.html" class="waves-effect waves-teal">Converter Screen Sizes</a>
+                </li>
+            </ul>
+        </header>
+
+        <main class="row">
+            <div class="col s12 m10 offset-m1">
+                <section class="section">
+                    <header class="row">
+                        <div class="col s12">
+                            <p>Input a inline-style html-code.</p>
                         </div>
                     </header>
 
@@ -75,7 +103,7 @@
                             <label for="outputCss">CSS Output Area</label>
                         </div>
                     </section>
-                </div>
+                </section>
             </div>
         </main>
 
