@@ -6529,10 +6529,11 @@ input[type=range]::-ms-thumb {
 *:focus {
   outline-color: #009688; }
 
-body > header,
-body > main,
-body > footer {
-  padding-left: 300px; }
+@media only screen and (min-width: 993px) {
+  body > header,
+  body > main,
+  body > footer {
+    padding-left: 300px; } }
 
 h1, h2, h3, h4 {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
@@ -6557,6 +6558,18 @@ img {
     font-size: 2.28rem;
     line-height: 110%;
     margin: 1.52rem 0 0.912rem 0; }
+  .header--top .top-nav.sidenav-trigger {
+    position: absolute;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    top: 28px;
+    left: 0;
+    float: none;
+    margin-left: 1.5rem;
+    color: #f3989b;
+    font-size: 36px;
+    z-index: 2; }
 
 .header .sidenav .logo {
   margin: 32px 0; }

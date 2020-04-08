@@ -6,7 +6,9 @@ body {
     > header,
     > main,
     > footer {
-        padding-left: 300px;
+        @media only screen and (min-width: $medium-screen-up) {
+            padding-left: 300px;
+        }
     }
 }
 

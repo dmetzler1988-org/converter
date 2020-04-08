@@ -7,6 +7,20 @@
             line-height: 110%;
             margin: 1.52rem 0 0.912rem 0;
         }
+
+        .top-nav.sidenav-trigger {
+            position: absolute;
+            text-align: center;
+            height: 48px;
+            width: 48px;
+            top: 28px;
+            left: 0;
+            float: none;
+            margin-left: 1.5rem;
+            color: #f3989b;
+            font-size: 36px;
+            z-index: 2;
+        }
     }
 
     .sidenav {

@@ -1,13 +1,3 @@
-<html>
-    <head>
-        <title>Converter for colors and sizes</title>
-        <link rel="shortcut icon" type="image/png" href="favicon.png">
-    </head>
-    <body>
-
-    </body>
-</html>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,7 +8,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="./public/images/favicon.ico">
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="./public/main.css?v=20200407"/>
+        <link rel="stylesheet" href="./public/main.css?v=20200407">
     </head>
     <body class="index">
         <header class="header">
@@ -27,11 +17,15 @@
                     <div class="col s12 m10 offset-m1">
                         <h1>Converter</h1>
                         <h2>Converts various things</h2>
+
+                        <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger full hide-on-large-only">
+                            <i class="material-icons">menu</i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <ul class="sidenav sidenav-fixed">
+            <ul id="nav-mobile" class="sidenav sidenav-fixed">
                 <li class="logo">
                     <a href="/" target="_self">
                         <img src="public/images/logo.png" alt="converter.dmetzler.io"/>
@@ -52,7 +46,7 @@
 
         <main>
             <div class="row">
-                <div class="col s12 m10 offset-m1">
+                <div class="col s12 m8 offset-m1 xl7 offset-xl1">
                     <section class="section">
                         <p>Welcome to my converter page.</p>
                         <p>Take a look to the currently available converter pages and write issues, if you have additional ideas :)</p>
