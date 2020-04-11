@@ -1,0 +1,41 @@
+*:focus {
+    outline-color: color("teal", "base");
+}
+
+body {
+    > header,
+    > main,
+    > footer {
+        @media #{$large-and-up} {
+            padding-left: 300px;
+        }
+
+        > .container {
+            @media #{$medium-and-up} {
+                width: 100%;
+            }
+        }
+    }
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: #EE6E66;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.content__is-center {
+    text-align: center;
+}
+
+.content__is-right {
+    text-align: right;
+}

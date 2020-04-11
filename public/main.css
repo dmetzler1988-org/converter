@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 .materialize-red {
   background-color: #e51c23 !important; }
 
@@ -6525,11 +6526,76 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem; } }
 
+*:focus {
+  outline-color: #009688; }
+
+@media only screen and (min-width: 993px) {
+  body > header,
+  body > main,
+  body > footer {
+    padding-left: 300px; } }
+
+@media only screen and (min-width: 601px) {
+  body > header > .container,
+  body > main > .container,
+  body > footer > .container {
+    width: 100%; } }
+
+h1, h2, h3, h4 {
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  color: #EE6E66; }
+
+h1 {
+  font-weight: 300; }
+
+img {
+  max-width: 100%;
+  max-height: 100%; }
+
 .content__is-center {
   text-align: center; }
 
 .content__is-right {
   text-align: right; }
+
+.header--top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14); }
+  @media only screen and (max-width: 992px) {
+    .header--top {
+      margin-top: 20px; } }
+  .header--top h2 {
+    font-size: 2.28rem;
+    line-height: 110%;
+    margin: 1.52rem 0 0.912rem 0; }
+  .header--top .top-nav.sidenav-trigger {
+    position: absolute;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    top: 0.2rem;
+    left: 0.2rem;
+    float: none;
+    color: #f3989b;
+    font-size: 36px;
+    z-index: 2; }
+
+.header .sidenav .logo {
+  margin: 32px 0; }
+  .header .sidenav .logo a {
+    height: auto;
+    text-align: center; }
+    .header .sidenav .logo a:hover {
+      background: none; }
+    .header .sidenav .logo a img {
+      display: inline-block;
+      vertical-align: top;
+      max-height: 100px; }
+
+.header .sidenav.sidenav-fixed li a {
+  padding: 0 30px; }
+
+.header .sidenav.sidenav-fixed ul.collapsible-accordion .collapsible-body li a {
+  padding: 0 37.5px 0 45px; }
 
 .converter--color-typed-output {
   display: block;

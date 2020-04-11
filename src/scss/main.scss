@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import "node_modules/materialize-css/sass/materialize";
 
-@import "components/base";
-@import "components/converter-colors";
-@import "components/converter-screen-sizes";
+@import "src/scss/components/base";
+@import "src/scss/components/header";
+@import "src/scss/components/converter-colors";
+@import "src/scss/components/converter-screen-sizes";
