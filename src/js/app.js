@@ -11,3 +11,12 @@ window.ScreenSizesConverter = ScreenSizesConverter;
 const HtmlCssSplitter = require('./components/splitter-html-css');
 //HtmlCssSplitter.init();
 window.HtmlCssSplitter = HtmlCssSplitter;
+
+// Core functionalities.
+document.addEventListener('DOMContentLoaded', function() {
+    let sidenav = document.querySelectorAll('.sidenav');
+    let collapsible = document.querySelectorAll('.collapsible');
+
+    window.Materialize.Sidenav.init(sidenav);
+    window.Materialize.Collapsible.init(collapsible);
+});

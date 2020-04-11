@@ -6,15 +6,21 @@ body {
     > header,
     > main,
     > footer {
-        @media only screen and (min-width: $medium-screen-up) {
+        @media #{$large-and-up} {
             padding-left: 300px;
+        }
+
+        > .container {
+            @media #{$medium-and-up} {
+                width: 100%;
+            }
         }
     }
 }
 
 h1, h2, h3, h4 {
     font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    color: #ee6e66;
+    color: #EE6E66;
 }
 
 h1 {

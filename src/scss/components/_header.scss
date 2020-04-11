@@ -2,6 +2,10 @@
     &--top {
         border-bottom: 1px solid rgba(0, 0, 0, 0.14);
 
+        @media #{$medium-and-down} {
+            margin-top: 20px;
+        }
+
         h2 {
             font-size: 2.28rem;
             line-height: 110%;
@@ -13,10 +17,9 @@
             text-align: center;
             height: 48px;
             width: 48px;
-            top: 28px;
-            left: 0;
+            top: 0.2rem;
+            left: 0.2rem;
             float: none;
-            margin-left: 1.5rem;
             color: #f3989b;
             font-size: 36px;
             z-index: 2;
@@ -39,6 +42,26 @@
                     display: inline-block;
                     vertical-align: top;
                     max-height: 100px;
+                }
+            }
+        }
+
+        &.sidenav-fixed {
+            li {
+                a {
+                    padding: 0 30px;
+                }
+            }
+
+            ul {
+                &.collapsible-accordion {
+                    .collapsible-body {
+                        li {
+                            a {
+                                padding: 0 37.5px 0 45px;
+                            }
+                        }
+                    }
                 }
             }
         }
