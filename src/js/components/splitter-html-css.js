@@ -12,6 +12,7 @@ export const init = () => {
         const $outputHtml = $('#outputHtml');
         const $outputCss = $('#outputCss');
         const $button = $('#convert');
+        const $cleanButton = $('#clean-fields');
         const $demoContentButton = $('#demoContent');
         const regexHtml = new RegExp(/(?= style=").+?(?=").(?<=style=").+?(?<=")/g); // Get the content from style=" to the next " with the space before.
         const regexCss = new RegExp(/(?<=style=").+?(?=")/g); // Get only the content between style=" and the next ".
@@ -121,6 +122,17 @@ export const init = () => {
                 // Trigger textField Update to fix label position.
                 window.Materialize.updateTextFields();
             }
+        });
+
+        $cleanButton.on('click', (event) => {
+            $input.val('');
+            $outputHtml.val('');
+            $outputCss.val('');
+
+            window.Materialize.textareaAutoResize($input);
+            window.Materialize.textareaAutoResize($outputHtml);
+            window.Materialize.textareaAutoResize($outputCss);
+            window.Materialize.updateTextFields();
         });
 
         $demoContentButton.on('click', (event) => {

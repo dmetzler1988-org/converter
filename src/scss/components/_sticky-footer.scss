@@ -1,0 +1,20 @@
+.sticky-footer--wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    &.sidenav {
+        li:not(:last-child) {
+            flex: 0;
+        }
+    }
+}
+
+.sticky-footer--content {
+    flex: 1 0 auto;
+}
+
+.sticky-footer--footer {
+    margin-top: auto;
+    margin-bottom: 20px;
+}

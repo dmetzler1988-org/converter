@@ -34,6 +34,10 @@ img {
 
 .content__is-center {
     text-align: center;
+
+    input[type=text] {
+        text-align: center;
+    }
 }
 
 .content__is-right {

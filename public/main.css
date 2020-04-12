@@ -6526,6 +6526,12 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem; } }
 
+.waves-effect {
+  transition-property: background-color; }
+
+.btn, .btn-large, .btn-small {
+  margin-bottom: 10px; }
+
 *:focus {
   outline-color: #009688; }
 
@@ -6554,6 +6560,8 @@ img {
 
 .content__is-center {
   text-align: center; }
+  .content__is-center input[type=text] {
+    text-align: center; }
 
 .content__is-right {
   text-align: right; }
@@ -6597,6 +6605,20 @@ img {
 .header .sidenav.sidenav-fixed ul.collapsible-accordion .collapsible-body li a {
   padding: 0 37.5px 0 45px; }
 
+.sticky-footer--wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+  .sticky-footer--wrapper.sidenav li:not(:last-child) {
+    flex: 0; }
+
+.sticky-footer--content {
+  flex: 1 0 auto; }
+
+.sticky-footer--footer {
+  margin-top: auto;
+  margin-bottom: 20px; }
+
 .converter--color-typed-output {
   display: block;
   width: 50px;
@@ -6616,3 +6638,18 @@ img {
   max-width: 100%;
   margin-right: 10px;
   text-align: center; }
+
+.github-badge {
+  text-align: center; }
+  .github-badge a {
+    color: #181717; }
+  .github-badge .github-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: 0 7px;
+    background: url("./images/github.svg") no-repeat;
+    background-size: contain; }
+  .github-badge .material-icons {
+    vertical-align: middle; }
