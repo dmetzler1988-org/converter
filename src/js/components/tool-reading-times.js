@@ -1,3 +1,5 @@
+// Check if time calc is correct: https://www.calculator.net/time-calculator.html
+// Demo content from: https://loremipsum.de/
 export const init = () => {
     $(document).ready(function () {
         const readWordsPerMinute = 265;  // Words which will be read in one minute.
@@ -14,9 +16,9 @@ export const init = () => {
             const textInputValue = $textInput.val();
 
             if (textInputValue) {
-                const countCharacters = textInputValue.length;
-
-                const value = textInputValue.trim();
+                // Replace line breaks with whitespace, multiple whitespaces with single whitespace and trim it.
+                let value = textInputValue.replace(/(\r\n|\n|\r)/g, ' ').replace(/\s+/g, ' ').trim();
+                const countCharacters = value.length;
                 const countWords = value.split(/\s+/).length;
                 let outputContent = `Given characters: ${countCharacters}<br>Given words: ${countWords}<br>`;
 
