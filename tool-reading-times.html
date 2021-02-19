@@ -4,11 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Converter for colors</title>
-        <link rel="shortcut icon" type="image/png" href="public/images/favicons/favicon-colors.png">
+        <title>Reading times tool</title>
+        <link rel="shortcut icon" type="image/png" href="public/images/favicons/favicon-screen-sizes.png">
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="./public/main.css?v=20200412"/>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+                crossorigin="anonymous">
+        </script>
     </head>
     <body class="converter">
         <header class="header">
@@ -16,8 +21,8 @@
                 <div class="header--top">
                     <div class="row">
                         <div class="col s12 m10 offset-m1">
-                            <h1>Convert colors</h1>
-                            <h2>Convert given color to others</h2>
+                            <h1>Reading times</h1>
+                            <h2>Determines approximate reading time</h2>
 
                             <a href="#" data-target="slide-out" class="top-nav sidenav-trigger full hide-on-large-only">
                                 <i class="material-icons">menu</i>
@@ -42,11 +47,11 @@
                 </li>
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
-                        <li class="bold active">
+                        <li class="bold">
                             <a class="collapsible-header waves-effect waves-teal" tabindex="0">Converters</a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li class="active">
+                                    <li>
                                         <a href="./../converter-colors.html">Converter Colors</a>
                                     </li>
                                     <li>
@@ -59,11 +64,11 @@
                 </li>
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
-                        <li class="bold">
+                        <li class="bold active">
                             <a class="collapsible-header waves-effect waves-teal" tabindex="0">Tools</a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li>
+                                    <li class="active">
                                         <a href="./../tool-reading-times.html">Reading Times</a>
                                     </li>
                                 </ul>
@@ -83,67 +88,53 @@
             </ul>
         </header>
 
-        <main class="converter--color">
+        <main class="tool--reading-times">
             <div class="container">
                 <div class="row">
                     <div class="col s12 m10 offset-m1">
                         <section class="section">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input id="colorHex" type="text" placeholder="#ff00ff">
-                                    <label for="colorHex">Insert HEX color</label>
+                            <header class="row">
+                                <div class="col s12">
+                                    <p>Description</p>
                                 </div>
-                            </div>
+                            </header>
 
-                            <div class="row">
+                            <section class="row">
                                 <div class="input-field col s12">
                                     <div class="row">
-                                        <div class="col s12">
-                                            <label>Insert RGB color</label>
-                                        </div>
-                                        <div class="col s3 content__is-center">
-                                            <input id="colorRgb1" type="text" placeholder="255">
-                                            <label for="colorRgb1">R</label>
-                                        </div>
-                                        <div class="col s3 content__is-center">
-                                            <input id="colorRgb2" type="text" placeholder="0">
-                                            <label for="colorRgb1">G</label>
-                                        </div>
-                                        <div class="col s3 content__is-center">
-                                            <input id="colorRgb3" type="text" placeholder="175">
-                                            <label for="colorRgb1">B</label>
+                                        <div class="col s12 m4 l3">
+                                            <input id="imagesInput" type="number" min="0" placeholder="5">
+                                            <label for="imagesInput">Number of images in text</label>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <button id="button-convert-colors" class="btn waves-effect waves-light">Convert colors
-                                <i class="material-icons right">cached</i>
-                            </button>
-                            <button id="button-clean-colors" class="btn waves-effect waves-light">Clean colors
-                                <i class="material-icons right">delete</i>
-                            </button>
+                                <div class="input-field col s12">
+                                    <textarea id="textInput" class="materialize-textarea"></textarea>
+                                    <label for="textInput">Input Area for text to count</label>
+                                </div>
 
-                            <div id="typed-color-output" class="converter--color-typed-output"></div>
+                                <div class="col s12 m6">
+                                    <button id="convert" type="button" class="btn waves-effect waves-light">Convert
+                                        <i class="material-icons right">cached</i>
+                                    </button>
+                                    <button id="clean-fields" class="btn waves-effect waves-light">Clean up
+                                        <i class="material-icons right">delete</i>
+                                    </button>
+                                </div>
 
-                            <div class="converter--color-outputs row">
-                                <div class="col s12 m6 l3">
-                                    <h6>HEX:</h6>
-                                    <span id="colorHex-output"></span>
+                                <div class="col s12 m6 content__is-right">
+                                    <button id="demoContent" type="button" class="waves-effect waves-teal btn-flat">Fill in demo content
+                                        <i class="material-icons right">accessible</i>
+                                    </button>
                                 </div>
-                                <div class="col s12 m6 l3">
-                                    <h6>RGB:</h6>
-                                    <span id="colorRgb-output"></span>
+                            </section>
+
+                            <footer class="row">
+                                <div class="col s12">
+                                    <div id="output"></div>
                                 </div>
-                                <div class="col s12 m6 l3">
-                                    <h6>CMYK:</h6>
-                                    <span id="colorCmyk-output"></span>
-                                </div>
-                                <div class="col s12 m6 l3">
-                                    <h6>HSV:</h6>
-                                    <span id="colorHsv-output"></span>
-                                </div>
-                            </div>
+                            </footer>
                         </section>
                     </div>
                 </div>
@@ -152,7 +143,7 @@
 
         <script type="text/javascript" src="./public/main.js?v=20200412"></script>
         <script type="text/javascript">
-            window.ColorConverter.init();
+            window.ReadingTimesTool.init();
         </script>
     </body>
 </html>

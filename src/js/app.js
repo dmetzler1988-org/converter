@@ -12,6 +12,10 @@ const HtmlCssSplitter = require('./components/splitter-html-css');
 //HtmlCssSplitter.init();
 window.HtmlCssSplitter = HtmlCssSplitter;
 
+const ReadingTimesTool = require('./components/tool-reading-times');
+//HtmlCssSplitter.init();
+window.ReadingTimesTool = ReadingTimesTool;
+
 // Core functionalities.
 document.addEventListener('DOMContentLoaded', function() {
     let sidenav = document.querySelectorAll('.sidenav');
