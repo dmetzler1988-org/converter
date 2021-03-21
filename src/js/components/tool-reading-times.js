@@ -20,7 +20,11 @@ export const init = () => {
                 let value = textInputValue.replace(/(\r\n|\n|\r)/g, ' ').replace(/\s+/g, ' ').trim();
                 const countCharacters = value.length;
                 const countWords = value.split(/\s+/).length;
-                let outputContent = `Given characters: ${countCharacters}<br>Given words: ${countWords}<br>`;
+
+                let outputContent = `<div class="grid grid--one-half">
+                    <p>Given characters: ${countCharacters}</p>
+                    <p>Given words: ${countWords}</p>
+                </div>`;
 
                 let wordReadTime = (countWords / readWordsPerMinute) * 60; // Read words in seconds.
                 let imgReadTime = imgInputValue * readTimeForImage; // Output is in seconds.
@@ -44,9 +48,11 @@ export const init = () => {
                     totalReadTime = parseFloat(totalReadTime).toFixed(2) + ' sec';
                 }
 
-                outputContent += `<br>Read time for text only: ${wordReadTime}`;
-                outputContent += `<br>Read time for images only: ${imgReadTime}`;
-                outputContent += `<br>Read time for all: ${totalReadTime}`;
+                outputContent += `<div class="grid grid--one-third">`;
+                outputContent += `<p>Read time for text only: ${wordReadTime}</p>`;
+                outputContent += `<p>Read time for images only: ${imgReadTime}</p>`;
+                outputContent += `<p>Read time for all: ${totalReadTime}</p>`;
+                outputContent += `</div>`;
 
                 $output.html(outputContent);
             }
