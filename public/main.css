@@ -6619,6 +6619,44 @@ img {
   margin-top: auto;
   margin-bottom: 20px; }
 
+.grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  margin: 5px 0; }
+  @media only screen and (max-width: 992px) {
+    .grid {
+      margin: 10px 0; } }
+  .grid p {
+    margin: 0; }
+  .grid--one-half {
+    grid-template-columns: repeat(2, 1fr); }
+    @media only screen and (max-width: 992px) {
+      .grid--one-half {
+        grid-template-columns: repeat(1, 1fr); } }
+    .grid--one-half > p:first-child {
+      text-align: left; }
+    .grid--one-half > p:last-child {
+      text-align: right; }
+      @media only screen and (max-width: 992px) {
+        .grid--one-half > p:last-child {
+          text-align: left; } }
+  .grid--one-third {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center; }
+    @media only screen and (max-width: 992px) {
+      .grid--one-third {
+        grid-template-columns: repeat(1, 1fr);
+        text-align: left; } }
+    .grid--one-third > p:first-child {
+      text-align: left; }
+    .grid--one-third > p:last-child {
+      text-align: right; }
+      @media only screen and (max-width: 992px) {
+        .grid--one-third > p:last-child {
+          text-align: left; } }
+
 .converter--color-typed-output {
   display: block;
   width: 50px;
